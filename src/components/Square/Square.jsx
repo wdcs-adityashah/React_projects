@@ -1,17 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react';
 import './Square.css';
-function Square({handleSquareClick}) {
-  console.log(handleSquareClick);
-  const[color,setColor] = useState('white');
-  const handleclick = () =>{
-    setColor('green');
-    handleSquareClick();
-     return;  
-  }
-     return (
-     <div className='block' onClick={handleclick} style={{backgroundColor:color}}>
-     </div>
-  )
+
+function Square({ color, handleSquareClick }) {
+  const handleClick = () => {
+    handleSquareClick(); 
+  };
+
+  return (
+    <div
+      className="square"
+      style={{ backgroundColor: color }}
+      onClick={handleClick}
+    />
+  );
 }
 
-export default Square
+export default Square;
